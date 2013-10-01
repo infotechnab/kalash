@@ -8,5 +8,6 @@
                          <div class="locationMap">
                              <div id="map-canvas"></div>
                         </div>
-                     </div>
+     <div class="clear"> </div>
+ </div>
                     

@@ -575,10 +575,12 @@ class bnw extends CI_Controller {
              }
              else
              {
-                $image = "";
+                $image = $this->input->post('image');
+                //die($image);
                 $id = $this->input->post('id');
                 $title = $this->input->post('title');
                 $body = $this->input->post('body');
+                //die($body);
                 $status = $this->input->post('status');
                 $this->dbmodel->update_activities($id, $title, $body, $image, $status);
                 $this->session->set_flashdata('message', 'Data Modified Sucessfully');

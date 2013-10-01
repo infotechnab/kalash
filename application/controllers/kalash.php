@@ -7,6 +7,8 @@ class kalash extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('viewmodel');
         $this->load->model('dbmodel');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library("pagination");
     }
 public function index()
     {
@@ -16,10 +18,12 @@ public function index()
        $data['event'] = $this->viewmodel->get_event();
      $data['query']= $this->viewmodel->get_menu();
      $data['slider'] = $this->viewmodel->get_slider();
+     $data['gadget']=  $this->viewmodel->gadget();
      $data['page'] =$this->viewmodel->get_page($id);
         $this->load->view('templates/header',$data);
+        $this->load->view('templates/slider',$data);
         $this->load->view('templates/body',$data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates/footer',$data);
         
     }
     
@@ -29,11 +33,15 @@ public function index()
          $data['slider'] = $this->viewmodel->get_slider();
          $data['query']= $this->viewmodel->get_menu();
                // $data['gadget'] = $this->viewmodel->get_gadgets();
+         $data['gadget']=  $this->viewmodel->gadget();
            $data['event'] = $this->viewmodel->get_event();
            $data['page'] =$this->viewmodel->get_page($id);
                 $this->load->view('templates/header',$data);
+                if($id==1){
+                     $this->load->view('templates/slider',$data);
+                }
                 $this->load->view('templates/body', $data);
-                $this->load->view('templates/footer');
+                $this->load->view('templates/footer',$data);
     }
     
     public function activities()
@@ -42,9 +50,48 @@ public function index()
             $data['event'] = $this->viewmodel->get_event();
             //$data['notices']=  $this->viewmodel->get_notices();
             //$data['events']= $this->viewmodel->get_events();
-           // $data['gadgets']=  $this->viewmodel->get_gadgets();
+            $data['gadget']=  $this->viewmodel->gadget();
              $this->load->view('templates/header',$data);
                 $this->load->view('templates/body', $data);
-                $this->load->view('templates/footer');
+                $this->load->view('templates/footer',$data);
         }
+        
+        function event($id)
+    {   
+        $data['logo'] = $this->viewmodel->get_logo();
+         $data['slider'] = $this->viewmodel->get_slider();
+         $data['query']= $this->viewmodel->get_menu();
+                $data['gadget']=  $this->viewmodel->gadget();
+           $data['event'] = $this->viewmodel->get_event();
+           $data['page'] =$this->viewmodel->get_event_id($id);
+                $this->load->view('templates/header',$data);
+                $this->load->view('event/index', $data);
+                $this->load->view('templates/footer',$data);
+    }
+    
+    public function menu(){
+         $data['logo'] = $this->viewmodel->get_logo();
+         $data['slider'] = $this->viewmodel->get_slider();
+         $data['query']= $this->viewmodel->get_menu();
+                $data['gadget']=  $this->viewmodel->gadget();
+           $data['event'] = $this->viewmodel->get_event();
+          // $data['page'] =$this->viewmodel->get_event_id($id);
+           $data['menuItem'] = $this->viewmodel->get_menuItem_count();
+           $config = array();
+            $config["base_url"] = base_url() . "index.php/kalash/menu/";
+            $config["total_rows"] =count($data['menuItem']);
+            $config["per_page"] = 9;
+            //$config["uri_segment"] = 3;
+
+            $this->pagination->initialize($config);
+
+            $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+            
+            $data["menuItem"] = $this->viewmodel->get_menuItem($config["per_page"], $page);
+            $data["links"] = $this->pagination->create_links();
+           //$data['menuItem'] = $this->viewmodel->get_menuItem();
+                $this->load->view('templates/header',$data);
+                $this->load->view('kalash/index', $data);
+                $this->load->view('templates/footer',$data);
+    }
 }

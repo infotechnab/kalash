@@ -8,7 +8,7 @@ body{
 }
 
 .fullBody{
-    width: 80%;
+    width: 100%;
     margin: 0 auto 0 auto;
     padding: 0px;
     background-color: #f4f4f4;
@@ -41,6 +41,7 @@ body{
 #eventImage{
     width: 100%;
     height: 40%;
+   
 }
 #facebookLike{
    float: right;
@@ -56,25 +57,33 @@ body{
 #listItem{
     color: #9a0636;
     list-style: none;
+    z-index: 10000;
    }
    #listItem li {
         display: inline;
         font-size: 18px;
         margin-right: 5%;
+        z-index: 10000;
    }  
    #listItem li a{
        text-decoration: none;
+       z-index: 10000;
      }
      #listItem li:hover{
-         padding: 1%;
+         padding:.3%;
          background-color: #9a0636;
          border-top-left-radius:10px; 
          border-top-right-radius:10px; 
+         z-index: 100000;
      }
       #listItem li:hover a{
          color: #FFFFFF;
          background-color: #9a0636;
          border-radius:3px; 
+         z-index: 100000;
+     }
+     .sliderZindez{
+         z-index: -10000;
      }
    .imageSlider{
        width: 100%;
@@ -82,7 +91,7 @@ body{
        
    }
    .smallImage{
-       width: 35%;
+       width: 35.3%;
        float: left;
    }   
    .sliderImage{
@@ -98,17 +107,22 @@ body{
        padding: 0px;
    }
    .introductionGadegt{
-       min-height: 25px;
+       
        margin-top: 1%;
+       width: 100%
        
    }
    .introductionNote{
       padding-left:1%;
        text-align: justify;
        width: 75%;
-       
+       float: left;
        color: #FFFFFF;
        background-color: #9a0636;
+   }
+   .locationMap{
+       width: 24%;
+       float: right;
    }
    .gadegt{
        width: 33%;
@@ -116,6 +130,9 @@ body{
        background-color: #9a0636;  
        height: 100px;
        float: left;
+       color: #FFFFFF;
+       text-align: center;
+       padding-top: .5%;
    }
    .gadegtLast{
        width: 33.2%;
@@ -133,4 +150,29 @@ body{
         float: left;
         text-align: center;
       }
-     
+      #eventBody{
+          text-align: left;
+          text-align: justify;
+      }
+      .textwrap{
+          float: left;
+          margin: 1%;
+          width: 30%;
+      }
+      .overImage1,.overImage2,.overImage3{
+           position: absolute;
+           left: 450px;
+      }
+      .overImage1{
+          top:330px;
+      }
+       .overImage2{
+          top:500px;
+      }
+       .overImage3{
+          top:670px;
+       }
+    #listImage{
+           width:24%;
+           height: 120px;
+       }

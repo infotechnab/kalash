@@ -32,7 +32,36 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 <style>
-    @media screen and (max-width:480px)
+   
+      @media screen and (max-width:800px)
+      {
+        .gadegt,.gadegtLast,.copyright,.design{
+                float: none;
+                width: 100%;
+                border-top:#fff solid 2px;
+            } 
+            .flagImg1,.flagImg2{
+   
+    width: 4%;
+    height: 16%;
+}
+.flagImg1{
+     margin-left: 85%;
+}
+    .textwrap{
+          float: right;
+          margin: 1%;
+          width: 100%;
+      }        
+       #listItem li {
+        display: list-item;
+       }  
+        #listImage{
+           width: 49%;
+          
+       }
+      }
+        @media screen and (max-width:480px)
     {
         .sliderImage{
             float: none;
@@ -61,24 +90,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 .flagImg1{
      margin-left: 85%;
 }
+.textwrap{
+          float: right;
+          margin: 1%;
+          width: 100%;
       }
-      @media screen and (max-width:800px)
-      {
-        .gadegt,.gadegtLast,.copyright,.design{
-                float: none;
-                width: 100%;
-                border-top:#fff solid 2px;
-            } 
-            .flagImg1,.flagImg2{
-   
-    width: 4%;
-    height: 16%;
-}
-.flagImg1{
-     margin-left: 85%;
-}
-            
-            
+       #listItem li {
+        display: list-item;
+       }
+       #listImage{
+           width:100%;
+          
+       }
+      
       }
 </style>
     </head>
@@ -112,40 +136,11 @@ fjs.parentNode.insertBefore(js, fjs);
                                         ?>
                                    
                              <li> <a href="<?php echo base_url()."index.php/kalash/page/".$data->p_id; ?>" ><?php echo $data->title; ?> </a></li> <?php  } ?>
-                           <!--  <li><a href="" >Restaurant</a></li>
-                             <li><a href="" >Special</a></li>
+                              <li><a href="<?php echo base_url()."index.php/kalash/menu"?>" >Menu Item</a></li>
+                             <!--  <li><a href="" >Restaurant</a></li>
+                            
                              <li><a href="">Features</a></li>
                              <li><a href="">Services</a></li>
                              <li><a href="">Contact</a></li> --> 
                          </ul>
                      </div>
-                     
-                     <div class="imageSlider">
-                         <div class="smallImage">
-                             <?php foreach ($event as $evn){
-                                 ?>
-                            <div class="listImage"><a href="" ><img id="eventImage" src="<?php echo base_url()."uploads/".$evn->image; ?>" /></a></div>
-                            <?php } ?>
-                            </div>
-                         <div class="sliderImage">
-                             <div id="wowslider-container1">
-	<div class="ws_images"><ul>
-                <?php foreach ($slider as $file)
-                {?>
-<li><img src="<?php echo base_url()."slider/".$file->image;?>" alt="slider" title="<?php echo $file->title;?>" id="wows1_0"/></li>
-<?php } ?>
-</ul></div>
-<div class="ws_bullets"><div>
-        <?php foreach ($slider as $data)
-        {?>
-<a href="#" title="slider"><img src="<?php echo base_url()."slider/".$file->title;?>" alt="slider"/>1</a>
-<?php } ?>
-</div></div>
-
-	<div class="ws_shadow"></div>
-	</div>
-	<script type="text/javascript" src="<?php echo base_url()."content/engine1/wowslider.js"?>"></script>
-	<script type="text/javascript" src="<?php echo base_url()."content/engine1/script.js"?>"></script>
-                         </div>
-                     </div>
-                     <div class="clear"></div>  

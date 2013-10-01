@@ -335,124 +335,7 @@ class Dbmodel extends CI_Model {
 
 
     //======================others 
-    function get_documents() {
-        $this->db->select('id, title, image, status, date');
-        $this->db->from('download');
-        //$this -> db -> where('did = ' . "'" . $gid . "'");
-        $query = $this->db->get();
-        return $query->result();
-    }
-
-    function upload_documents($name, $image, $status) {
-        $data = Array(
-            'title' => $name,
-            'image' => $image,
-            'status' => $status);
-        $this->db->insert('download', $data);
-    }
-
-    function delete_document($id) {
-        $this->db->delete('download', array('id' => $id));
-    }
-
-    function get_all_photos() {
-        $this->db->select('eid, title, image');
-        $this->db->from('gallery');
-        //$this -> db -> where('did = ' . "'" . $gid . "'");
-        $query = $this->db->get();
-        return $query->result();
-    }
-
-    function add_new_photo($name, $image,$aid) {
-        $data = Array(
-            'title' => $name,
-            'image' => $image,
-            'aid'=> $aid);
-        
-        $this->db->insert('gallery', $data);
-    }
-    
-    function get_aid($id)
-    {
-         $this->db->select('aid');
-        $this->db->where('eid',$id);
-        $this->db->from('gallery');
-        $aid = $this->db->get();
-         return $aid->result();
-    }
-
-    function delete_photo($id) {
-       
-        $this->db->delete('gallery', array('eid' => $id));
-        
-    }
-
-    function get_alumni() {
-        // $this -> db -> select('eid, title, image');
-        //$this -> db -> from('gallery');
-        //$this -> db -> where('did = ' . "'" . $gid . "'");
-        $query = $this->db->get('alumni');
-        return $query->result();
-    }
-
-    function add_alumni($name, $batch, $p_address, $c_address, $qualification, $organization, $email, $phone, $status) {
-        $this->load->database();
-        $data = array(
-            'name' => $name,
-            'batch' => $batch,
-            'p_address' => $p_address,
-            'c_address' => $c_address,
-            'qualification' => $qualification,
-            'organization' => $organization,
-            'email' => $email,
-            'phone' => $phone,
-            'status' => $status);
-        $this->db->insert('alumni', $data);
-    }
-
-    function find_alumni($sid) {
-        $this->db->select('sid, name, batch, p_address, c_address, qualification, organization, email,phone, status');
-
-        //$this -> db -> from('gallery');
-        $this->db->where('sid = ' . "'" . $sid . "'");
-        $query = $this->db->get('alumni');
-        return $query->result();
-    }
-
-    function update_alumni($sid, $name, $batch, $p_address, $c_address, $qualification, $organization, $email, $phone, $status) {
-        $this->load->database();
-        $data = array(
-            'name' => $name,
-            'batch' => $batch,
-            'p_address' => $p_address,
-            'c_address' => $c_address,
-            'qualification' => $qualification,
-            'organization' => $organization,
-            'email' => $email,
-            'phone' => $phone,
-            'status' => $status);
-        $this->db->where('sid', $sid);
-        $this->db->update('alumni', $data);
-    }
-
-    function delete_alumni($sid) {
-        $this->db->delete('alumni', array('sid' => $sid));
-    }   
-
-    public function fetch_alumni($limit, $start) {
-        $this->db->limit($limit, $start);
-        $query = $this->db->get("alumni");
-
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-        }
-        return false;
-    }
-    
-     public function record_count_slider() {
+   public function record_count_slider() {
         return $this->db->count_all("slider");
     }
     
@@ -530,7 +413,9 @@ class Dbmodel extends CI_Model {
         $this->db->update('menu', $data);
     }    
     public function add_new_menu($tital,$listing, $order , $id )
-    {   $this->load->database();        
+    {  
+       // die($id);
+        $this->load->database();        
         $data = array(
             'p_id'=>$id,
             'title'=> $tital,
@@ -541,9 +426,6 @@ class Dbmodel extends CI_Model {
     }
     
     function get_logo() {
-        //$this->db->select('id, title, image, status, date');
-        //$this->db->from('blog');
-        //$this -> db -> where('did = ' . "'" . $gid . "'");
         $query = $this->db->get('logo_image');
         return $query->result();
     }

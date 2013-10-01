@@ -9,7 +9,7 @@
   <?php if($this->session->flashdata('message')){echo $this->session->flashdata('message');}?>
 </p>
   <?php echo form_open_multipart('bnw/addpage');?>
-    <input type="text" name="type" value="page" />
+    <input type="hidden" name="type" value="page" />
   <p>Title:<br />
   <input type="text" name="title" />
   </p>

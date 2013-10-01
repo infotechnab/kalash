@@ -6,9 +6,9 @@
 #wowslider-container1 { 
 	zoom: 1; 
 	position: relative; 
-	max-width:536px;
+	width: 100%;
 	margin:0 auto;
-	z-index:100;
+	z-index:1;
 	border:none;
 	text-align:left; /* reset align=center */
 }

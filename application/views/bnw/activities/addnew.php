@@ -7,7 +7,7 @@
   ?>
   <?php if($this->session->flashdata('message')){echo $this->session->flashdata('message');}?>
   <?php echo form_open_multipart('bnw/addactivity');?>
-  <input type="text" name="type" value="event" />
+  <input type="hidden" name="type" value="event" />
   <p>Title:<br />
   <input type="text" name="title" />
   </p>

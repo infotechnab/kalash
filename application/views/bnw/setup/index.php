@@ -29,5 +29,8 @@ if ($meta)
   <p>Description :<br />
   <input type="text" name="description" value="<?php echo $meta_data[3]; ?>"/>
   </p>
+  <p>Header Logo :<br />
+  <input type="file" name="image"/>
+  </p>
  <input type="submit" value="Submit" />
   <?php echo form_close();?>

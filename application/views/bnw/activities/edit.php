@@ -26,7 +26,7 @@
   <?php echo form_open_multipart('bnw/updateactivities');?>
   <p>Title:<br />
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
-      <input type="text" name="title" value="<?php echo $title; ?>" />
+      <input type="hidden" name="title" value="<?php echo $title; ?>" />
   </p>
   <p>Body:<br />
   <textarea name="body" rows="5" cols="50" style="resize:none;"><?php echo $body; ?></textarea>
@@ -35,7 +35,8 @@
   {?>  
   <p>Present image : <br/>
   <div >
-      <img src="<?php echo base_url(); ?>uploads/<?php echo $data->image; ?>" width="250px" height="150px" /> 
+    <input type="hidden" name="image" value="<?php echo $image; ?>" />
+      <img src="<?php echo base_url(); ?>uploads/<?php echo $image; ?>" width="250px" height="150px" /> 
       <a href="<?php echo base_url();?>index.php/bnw/delete_page_image/<?php echo $id; ?>">
         <img src="<?php echo base_url();?>content/images/delete.png" width="20px" height="20px"/></a>
   </div>
