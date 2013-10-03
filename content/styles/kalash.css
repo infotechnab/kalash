@@ -2,11 +2,9 @@ body{
     margin: 0px;
     padding: 0px;
 }
-
 .full{
     width: 100%;
 }
-
 .fullBody{
     width: 100%;
     margin: 0 auto 0 auto;
@@ -41,91 +39,79 @@ body{
 #eventImage{
     width: 100%;
     height: 40%;
-   
 }
 #facebookLike{
    float: right;
     margin-right: 5%;
     margin-top: 5%;
 }
-
 .menuList{
     margin: -1%;
     padding: 0px;
 }
-
 #listItem{
     color: #9a0636;
     list-style: none;
-    z-index: 1;
+   
    }
    #listItem li {
         display: inline;
         font-size: 18px;
         margin-right: 5%;
-        z-index: 1;
+       
    }  
    #listItem li a{
        text-decoration: none;
-       z-index: 1;
+       color:  #9a0636;
+      
      }
-     #listItem li:hover{
+   .menuList #listItem li:hover{
          padding:.3%;
          background-color: #9a0636;
          border-top-left-radius:10px; 
          border-top-right-radius:10px; 
          z-index: 10;
-         
      }
-      #listItem li:hover a{
+    .menuList #listItem li:hover a{
          color: #FFFFFF;
          background-color: #9a0636;
-         border-radius:3px; 
-        
+         border-radius:3px;
      }
-     #listItem li:hover ul{
-         
-        
+    .menuList #listItem li:hover ul{
         margin: 0 auto 0 auto;
 	display:block;
         position: relative;
-        top :8px;
+        top :2px;
         left:-5%;
         z-index:5000;
-          width: 20%;
-        
+        width: 20%;
 }
-
-#listItem li:hover ul li{
+  .menuList #listItem li:hover ul li{
     background-color: #FFFFFF;
     color: #9a0636;
     position: relative;
-        top :5px;
-        left:15%;
+        top :2px;
+        left:-5%;
         display: list-item;
         list-style: none;
-        width: 100%;
-       z-index:5000;
+        width: 80%;
+      
 }
-#listItem li:hover ul li:hover{
+.menuList #listItem li ul li:hover{
     background-color: #9a0636;
          border-top-left-radius:10px; 
          border-top-right-radius:10px;  
 }
-
-     .listItemHover {
+.listItemHover {
          position:relative;
 	display:none;
           margin: 0;
-         
      }
      .sliderZindez{
          z-index: -10000;
      }
    .imageSlider{
        width: 100%;
-     
-       
    }
    .smallImage{
        width: 35.3%;
@@ -135,7 +121,6 @@ body{
        width: 63%;
        float: right;
    }
-   
    .clear{
        clear: both;
    }
@@ -144,10 +129,8 @@ body{
        padding: 0px;
    }
    .introductionGadegt{
-       
        margin-top: 1%;
        width: 100%
-       
    }
    .introductionNote{
       padding-left:1%;
