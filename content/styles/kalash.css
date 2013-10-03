@@ -176,8 +176,14 @@ body{
            width:24%;
            height: 120px;
        }
+       .reservationForm{
+           background-color: #9a0636;
+           padding: 2%;
+           color: #FFFFFF;
+       }
        
        .reservationTitle{
-           background-color: #d1c825;
+           background-color: #FFFFFF;
            padding: 1%;
+           color: #9a0636;
        }

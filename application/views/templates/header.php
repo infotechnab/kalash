@@ -128,7 +128,7 @@ js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=312833668796761";
 fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-                      <!--  <img id="facebookLike" src="<?php echo base_url()."content/images/Facebook-Like-Button.png"?>" alt="facebook like" /> -->
+                      <!--  <img id="facebookLike" src="<?php //echo base_url()."content/images/Facebook-Like-Button.png"?>" alt="facebook like" /> -->
                     </div>
                      <div class="menuList">
                          <ul id="listItem">

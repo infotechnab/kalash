@@ -22,7 +22,7 @@
   <?php echo form_open_multipart('bnw/update');?>
   <p>Title:<br />
       <input type="hidden" name="id" value="<?php echo $id; ?>" />
-      <input type="hidden" name="title" value="<?php echo $title; ?>" />
+      <input type="text" name="title" value="<?php echo $title; ?>" />
   </p>
   <p>Body:<br />
   <textarea name="area1" rows="5" cols="50" style="resize:none;"><?php echo $body; ?></textarea>

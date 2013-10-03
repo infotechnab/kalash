@@ -9,6 +9,7 @@ class kalash extends CI_Controller {
         $this->load->model('dbmodel');
         $this->load->helper(array('form', 'url'));
         $this->load->library("pagination");
+        $this->load->library('email');
     }
 public function index()
     {
@@ -102,8 +103,32 @@ public function index()
                 $data['gadget']=  $this->viewmodel->gadget();
            $data['event'] = $this->viewmodel->get_event();
            $this->load->view('templates/header',$data);
+          // $this->load->view('kalash/recaptchalib');
                 $this->load->view('kalash/reservation', $data);
-                $this->load->view('templates/footer',$data);
-        
-    }
+                $this->load->view('templates/footer',$data); 
+                
+                }
+                
+                function mail(){
+                    $name = $this->input->post('name');
+                    $email = $this->input->post('email');
+                    $address = $this->input->post('address');
+                    $date = $this->input->post('date');
+                    $hr = $this->input->post('hr');
+                    $min = $this->input->post('min');
+                    $am = $this->input->post('am');
+                    $time = $hr.':'.$min." ".$am;
+                    $contact = $this->input->post('contact');
+                    $message = $this->input->post('message');
+                    
+                    $this->email->from($email,$name);
+                    $this->email->to('rsubedi@salyani.com.np');
+                    $this->email->subject('');
+                    $this->email->message('Reservation Item
+                        =====================================================
+                       Name ='.$name.'<br/>'.' Date ='.$date.'<br/>'.'Time ='.$time.'<br/>'.'Address = '.$address.'<br/>'
+                            .'Contact = '.$contact.'<br/>'.'Message = '.$message);
+                    $this->email->send();
+                                     
+                }
 }
