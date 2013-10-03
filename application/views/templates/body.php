@@ -6,7 +6,7 @@
                         </div> 
                         
                          <div class="locationMap">
-                             <div id="map-canvas"></div>
+                             <div id="map-canvas">This is map canvas.</div>
                         </div>
      <div class="clear"> </div>
  </div>
