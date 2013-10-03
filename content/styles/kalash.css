@@ -176,3 +176,8 @@ body{
            width:24%;
            height: 120px;
        }
+       
+       .reservationTitle{
+           background-color: #d1c825;
+           padding: 1%;
+       }

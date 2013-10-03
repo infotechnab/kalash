@@ -94,4 +94,16 @@ public function index()
                 $this->load->view('kalash/index', $data);
                 $this->load->view('templates/footer',$data);
     }
+    
+    function reservation(){
+        $data['logo'] = $this->viewmodel->get_logo();
+         $data['slider'] = $this->viewmodel->get_slider();
+         $data['query']= $this->viewmodel->get_menu();
+                $data['gadget']=  $this->viewmodel->gadget();
+           $data['event'] = $this->viewmodel->get_event();
+           $this->load->view('templates/header',$data);
+                $this->load->view('kalash/reservation', $data);
+                $this->load->view('templates/footer',$data);
+        
+    }
 }

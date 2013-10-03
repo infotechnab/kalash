@@ -137,6 +137,7 @@ fjs.parentNode.insertBefore(js, fjs);
                                    
                              <li> <a href="<?php echo base_url()."index.php/kalash/page/".$data->p_id; ?>" ><?php echo $data->title; ?> </a></li> <?php  } ?>
                               <li><a href="<?php echo base_url()."index.php/kalash/menu"?>" >Menu Item</a></li>
+                              <li><a href="<?php echo base_url()."index.php/kalash/reservation"?>" >Reservation</a></li>
                              <!--  <li><a href="" >Restaurant</a></li>
                             
                              <li><a href="">Features</a></li>
