@@ -57,24 +57,24 @@ body{
 #listItem{
     color: #9a0636;
     list-style: none;
-   
+    z-index: 1;
    }
    #listItem li {
         display: inline;
         font-size: 18px;
         margin-right: 5%;
-        
+        z-index: 1;
    }  
    #listItem li a{
        text-decoration: none;
-      
+       z-index: 1;
      }
      #listItem li:hover{
          padding:.3%;
          background-color: #9a0636;
          border-top-left-radius:10px; 
          border-top-right-radius:10px; 
-        
+         z-index: 10;
          
      }
       #listItem li:hover a{
@@ -88,9 +88,11 @@ body{
         
         margin: 0 auto 0 auto;
 	display:block;
-       
+        position: relative;
+        top :8px;
+        left:-5%;
         z-index:5000;
-          width: 30%;
+          width: 20%;
         
 }
 
@@ -102,19 +104,20 @@ body{
         left:15%;
         display: list-item;
         list-style: none;
-        width: 70%;
+        width: 100%;
        z-index:5000;
 }
 #listItem li:hover ul li:hover{
-    padding:.3%;
-         background-color: #9a0636;
+    background-color: #9a0636;
          border-top-left-radius:10px; 
-         border-top-right-radius:10px;
+         border-top-right-radius:10px;  
 }
 
      .listItemHover {
+         position:relative;
+	display:none;
           margin: 0;
-          display: none;
+         
      }
      .sliderZindez{
          z-index: -10000;

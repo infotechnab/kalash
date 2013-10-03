@@ -81,7 +81,7 @@ public function index()
            $config = array();
             $config["base_url"] = base_url() . "index.php/kalash/menu/";
             $config["total_rows"] =count($data['menuItem']);
-            $config["per_page"] = 9;
+            $config["per_page"] = 8;
             //$config["uri_segment"] = 3;
 
             $this->pagination->initialize($config);
