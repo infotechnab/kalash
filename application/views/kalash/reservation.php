@@ -25,7 +25,7 @@
 		  }
 	else
 	{ ?>
-    <?php echo form_open('kalash/mail'); ?>
+    <?php echo form_open(''); ?>
     <lable>Name</lable> <br/>
     <input type="text" name="name"  /> <br/> <br/>
     <lable>E-Mail</lable><br/>

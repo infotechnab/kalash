@@ -57,30 +57,64 @@ body{
 #listItem{
     color: #9a0636;
     list-style: none;
-    z-index: 10000;
+   
    }
    #listItem li {
         display: inline;
         font-size: 18px;
         margin-right: 5%;
-        z-index: 10000;
+        
    }  
    #listItem li a{
        text-decoration: none;
-       z-index: 10000;
+      
      }
      #listItem li:hover{
          padding:.3%;
          background-color: #9a0636;
          border-top-left-radius:10px; 
          border-top-right-radius:10px; 
-         z-index: 100000;
+        
+         
      }
       #listItem li:hover a{
          color: #FFFFFF;
          background-color: #9a0636;
          border-radius:3px; 
-         z-index: 100000;
+        
+     }
+     #listItem li:hover ul{
+         
+        
+        margin: 0 auto 0 auto;
+	display:block;
+       
+        z-index:5000;
+          width: 30%;
+        
+}
+
+#listItem li:hover ul li{
+    background-color: #FFFFFF;
+    color: #9a0636;
+    position: relative;
+        top :5px;
+        left:15%;
+        display: list-item;
+        list-style: none;
+        width: 70%;
+       z-index:5000;
+}
+#listItem li:hover ul li:hover{
+    padding:.3%;
+         background-color: #9a0636;
+         border-top-left-radius:10px; 
+         border-top-right-radius:10px;
+}
+
+     .listItemHover {
+          margin: 0;
+          display: none;
      }
      .sliderZindez{
          z-index: -10000;
@@ -120,6 +154,14 @@ body{
        color: #FFFFFF;
        background-color: #9a0636;
    }
+   .introductionNoteBody{
+        padding:1%;
+       text-align: justify;
+       width: 98%;
+       float: left;
+       color: #FFFFFF;
+       background-color: #9a0636;
+   }
    .locationMap{
        width: 49%;
        float: right;
@@ -143,7 +185,9 @@ body{
    }
    .footer{
        width: 100%;
-       margin-top: 2%; 
+       margin-top: 1%; 
+       background-color: #FFFFFF;
+       padding: 2%;
    }
    .copyright,.design{
        width: 50%;
@@ -161,7 +205,7 @@ body{
       }
       .overImage1,.overImage2,.overImage3{
            position: absolute;
-           left: 450px;
+           left: 400px;
       }
       .overImage1{
           top:330px;
@@ -175,6 +219,7 @@ body{
     #listImage{
            width:24%;
            height: 120px;
+           margin-left: .5%;
        }
        .reservationForm{
            background-color: #9a0636;
@@ -186,4 +231,11 @@ body{
            background-color: #FFFFFF;
            padding: 1%;
            color: #9a0636;
+       }
+       .listItemDiv{
+           background-color: #9a0636;
+           padding: 1%;
+       }
+       .listItemImage{
+           padding: 1%;
        }

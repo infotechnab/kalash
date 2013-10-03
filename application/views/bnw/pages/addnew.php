@@ -28,6 +28,7 @@
   </p>
   <p>listing : <br/>
   <select name="listing">
+      <option value="0">Parent..</option>
   <?php foreach ($query as $data)
   { ?><option value="<?php echo $data->id;; ?>"><?php echo $data->title; ?></option> <?php } ?> 
       </select> </p>

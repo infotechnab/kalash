@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 01, 2013 at 01:09 PM
+-- Generation Time: Oct 03, 2013 at 09:44 AM
 -- Server version: 5.5.16
 -- PHP Version: 5.3.8
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `is_single` tinyint(1) NOT NULL,
   `p_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 --
 -- Dumping data for table `menu`
@@ -87,10 +87,11 @@ CREATE TABLE IF NOT EXISTS `menu` (
 INSERT INTO `menu` (`id`, `title`, `parmalink`, `listing`, `order`, `link`, `is_single`, `p_id`) VALUES
 (1, 'Home', 'home', 0, 0, 'sfsdfsdf', 1, 1),
 (22, 'Features', '', 1, 1, '', 0, 34),
-(23, 'Services', '', 1, 0, '', 0, 35),
-(24, 'Contact', '', 1, 0, '', 0, 36),
+(23, 'Services', '', 0, 0, '', 0, 35),
+(24, 'Contact', '', 0, 0, '', 0, 36),
 (25, 'Restaurant', ';sdf', 0, 1, 'kljn', 0, 3),
-(27, 'new page', '', 1, 5, '', 0, 48);
+(28, 'Nepali Indian Items', '', 23, 2, '', 0, 1),
+(30, 'Item', '', 0, 1, '', 0, 59);
 
 -- --------------------------------------------------------
 
@@ -156,15 +157,15 @@ CREATE TABLE IF NOT EXISTS `page_event` (
   `status` varchar(200) NOT NULL,
   `type` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=60 ;
 
 --
 -- Dumping data for table `page_event`
 --
 
 INSERT INTO `page_event` (`id`, `title`, `body`, `image`, `date`, `status`, `type`) VALUES
-(1, 'Home', ' <h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an', '', '2013-09-30 09:54:02', '1', 'page'),
-(3, 'Restuarant', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an<', '', '2013-09-30 11:13:53', '1', 'page'),
+(1, 'Home', ' <h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an</p><p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an</p><p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an</p>', '', '2013-10-03 05:10:20', '1', 'page'),
+(3, 'Restuarant', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an</p><p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an</p><p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an</p>', '', '2013-10-03 08:05:14', '1', 'page'),
 (5, 'Special', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an<', '', '2013-09-30 11:14:01', '1', 'page'),
 (34, 'Features', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an<', '', '2013-09-30 11:14:08', '1', 'page'),
 (35, 'Services', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an<', '', '2013-09-30 11:14:15', '1', 'page'),
@@ -174,14 +175,14 @@ INSERT INTO `page_event` (`id`, `title`, `body`, `image`, `date`, `status`, `typ
 (40, 'food2', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an&', 'food21.jpg', '2013-10-01 05:09:33', '1', 'event'),
 (41, 'food3', '<h4>Welcome ! </h4>\r\n                             <h5>Namaste! Welcome to Kalash Restaurant. </h5>\r\n <p>Located in the heart of Amsterdam, just a 6 - 9 minute walk from Amsterdam \r\nCentral Station an&', 'food31.jpg', '2013-10-01 05:14:23', '1', 'event'),
 (47, 'new page', '<img src="http://i.imgur.com/hfyECTi.jpg" width="284"> image.<br>', 'flag1.png', '2013-09-30 12:20:57', '1', 'page'),
-(48, 'new page', '<img src="http://i.imgur.com/hfyECTi.jpg" width="284"> image.<br>', 'flag11.png', '2013-09-30 12:21:09', '1', 'page'),
 (49, 'food4', 'food 4 <br>', 'flag12.png', '2013-10-01 10:08:31', '1', 'event'),
 (50, 'food 5 ', 'food 5<br>', 'food16.jpg', '2013-10-01 10:09:30', '1', 'event'),
 (51, 'food 6 ', 'food 6<br>', 'food22.jpg', '2013-10-01 10:09:47', '1', 'event'),
 (52, 'food 7 ', 'food 4<br>', 'food32.jpg', '2013-10-01 10:10:02', '1', 'event'),
 (55, 'food 9 ', 'food 9 <br>', 'food23.jpg', '2013-10-01 10:11:57', '1', 'event'),
 (56, 'new food', 'new food<br>', 'food33.jpg', '2013-10-01 11:44:17', '1', 'event'),
-(57, 'new food 2 ', 'new food 2<br>', 'Untitled-1.jpg', '2013-10-01 11:44:33', '1', 'event');
+(57, 'new food 2 ', 'new food 2<br>', 'Untitled-1.jpg', '2013-10-01 11:44:33', '1', 'event'),
+(59, 'Item', '<br>', '', '2013-10-03 08:42:04', '1', 'page');
 
 -- --------------------------------------------------------
 

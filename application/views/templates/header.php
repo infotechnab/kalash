@@ -131,17 +131,52 @@ fjs.parentNode.insertBefore(js, fjs);
                       <!--  <img id="facebookLike" src="<?php //echo base_url()."content/images/Facebook-Like-Button.png"?>" alt="facebook like" /> -->
                     </div>
                      <div class="menuList">
-                         <ul id="listItem">
-                                    <?php foreach ($query as $data){
+                       <!--  <ul id="listItem">
+                                    <?php //foreach ($query as $data){
                                         ?>
                                    
-                             <li> <a href="<?php echo base_url()."index.php/kalash/page/".$data->p_id; ?>" ><?php echo $data->title; ?> </a></li> <?php  } ?>
-                              <li><a href="<?php echo base_url()."index.php/kalash/menu"?>" >Menu Item</a></li>
-                              <li><a href="<?php echo base_url()."index.php/kalash/reservation"?>" >Reservation</a></li>
+                             <li> <a href="<?php //echo base_url()."index.php/kalash/page/".$data->p_id; ?>" ><?php // echo $data->title; ?> </a></li> <?php // } ?>
+                              <li><a href="<?php// echo base_url()."index.php/kalash/menu"?>" >Menu Item</a></li>
+                              <li><a href="<?php// echo base_url()."index.php/kalash/reservation"?>" >Reservation</a></li>
                              <!--  <li><a href="" >Restaurant</a></li>
                             
                              <li><a href="">Features</a></li>
                              <li><a href="">Services</a></li>
-                             <li><a href="">Contact</a></li> --> 
-                         </ul>
+                             <li><a href="">Contact</a></li>
+                         </ul> -->
+                                    
+<ul id="listItem">
+                <?php 
+ foreach ($query as $data)
+ {
+     
+     $listing = $data->listing;
+     $title = $data->title;
+     //$id= $data->id;
+      if($listing==0|| $listing=="" )
+     { ?>
+                <li> <a href="<?php echo base_url()."index.php/kalash/page/".$data->p_id; ?>" > <?php echo $data->title; } ?> </a>
+        <?php         
+                $list = $this->viewmodel->get_sublist_title($title);
+                    foreach ($list as $data)
+                 {         $id= $data->p_id;
+                 }
+                 
+                 ?>
+                   
+                 <?php
+                         $menu = $this->viewmodel->get_sublist($id);
+                         if(!empty($menu))
+                         {         ?>
+                    <ul class="listItemHover">
+ <?php                   
+                         foreach ($menu as $data)
+                         {
+                           ?>                    
+           <li> <a href="<?php echo base_url()."index.php/kalash/page/".$data->p_id; ?>" ><?php echo $data->title; ?> </a> </li> <?php } ?>   </ul> 
+            </li>
+                <?php } } ?>
+            <li><a href="<?php echo base_url()."index.php/kalash/menu"?>" >Menu Item</a></li>
+              <li><a href="<?php echo base_url()."index.php/kalash/reservation"?>" >Reservation</a></li>
+            </ul>
                      </div>
